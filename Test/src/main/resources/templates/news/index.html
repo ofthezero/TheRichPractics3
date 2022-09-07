@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>News</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+<br>
+<div th:each="el : ${news}" class="btn btn-light" >
+  <h2 th:text="${el.title}"></h2>
+  <h3 th:text="${el.author}"></h3>
+  <p th:text="${el.views}"></p>
+  <a th:href="'/news/' + ${el.id}" class="btn btn-warning" >Подробнее</a>
+</div>
+<br>
+<form method="get" action="/news/search"><br>
+  <input type="text" class="btn btn-dark"  placeholder="Поиск..." name="title" id="title">
+  <input type="submit" value="Найти" class="btn btn-outline-dark me-2" >
+</form>
+<br>
+<a href="/news/add" class="btn btn-warning">Добавить новость</a>
+
+</body>
+</html>

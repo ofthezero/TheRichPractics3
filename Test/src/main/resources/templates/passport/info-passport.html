@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Passport</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+
+<div th:each="el : ${passport}" class="btn btn-light">
+    <h2 th:text="${el.name}"></h2>
+    <h3 th:text="${el.snils_number}"></h3>
+    <p th:text="${el.oms_number}"></p>
+    <a th:href="'/passport/edit/'+ ${el.id}" class="btn btn-dark">Изменить</a>
+    <a th:href="'/passport/del/'+ ${el.id}" class="btn btn-danger">Удалить</a>
+    <a href="/passport/" class="btn btn-warning">Назад</a>
+</div>
+
+</body>
+</html>

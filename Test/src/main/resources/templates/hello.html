@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+
+
+<form method="post" action="/res">
+
+<br>
+    <input id="variable" class="btn btn-light" placeholder="Первое число..." aria-label="Первое число" name="variable" type="number">
+    <input id="variable2" class="btn btn-light" placeholder="Второе число..." aria-label="Второе число" name="variable2" type="number">
+
+    <select class="btn btn-outline-dark me-2" id="select" name="select">
+        <option value="1">+</option>
+        <option value="2">-</option>
+        <option value="3">*</option>
+        <option value="4">/</option>
+    </select>
+    <input value="Отправить через Post" class="btn btn-warning" type="submit">
+</form>
+<br>
+<form method="get" action="/getres">
+    <br>
+    <input id="variable3" class="btn btn-light"  placeholder="Первое число..." aria-label="Первое число" name="variabl3" type="number">
+    <input id="variable4" class="btn btn-light"  placeholder="Второе число..." aria-label="Второе число" name="variable4" type="number">
+
+    <select class="btn btn-outline-dark me-2" id="select1" name="select1">
+        <option value="1">+</option>
+        <option value="2">-</option>
+        <option value="3">*</option>
+        <option value="4">/</option>
+    </select>
+    <input value="Отправить через Get" class="btn btn-warning" type="submit">
+</form>
+<br>
+
+</body>
+</html>

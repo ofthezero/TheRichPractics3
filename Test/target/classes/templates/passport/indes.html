@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Passport</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+<br>
+<div th:each="el : ${passport}" class="btn btn-light">
+    <h2 th:text="${el.name}"></h2>
+    <h3 th:text="${el.snils_number}"></h3>
+    <p th:text="${el.oms_number}"></p>
+    <a th:href="'/passport/' + ${el.id}" class="btn btn-warning" >Подробнее</a>
+</div>
+
+<form method="get" action="/passport/searpassport"><br>
+    <input type="text" name="name" id="name"  class="btn btn-dark"  placeholder="Поиск..."n>
+    <input type="submit" value="Найти" class="btn btn-outline-dark me-2">
+</form>
+<br>
+<a href="/passport/adds" class="btn btn-warning">Добавить данные</a>
+
+</body>
+</html>

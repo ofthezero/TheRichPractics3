@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trailers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+<br>
+<form action="/trailers/adde" method="post">
+    <input type="text"  class="btn btn-light" id="nameT" name="nameT" placeholder="Название сериала">
+    <input type="text"  class="btn btn-light" id="raiting1" name="raiting1" placeholder="Рейтинг КП">
+    <input type="text"  class="btn btn-light" id="raiting2" name="raiting2" placeholder="Рейтинг UHTB">
+    <input type="text"  class="btn btn-light" id="date" name="date" placeholder="Количество серий">
+    <input type="text"  class="btn btn-light" id="season" name="season" placeholder="Количество сезонов">
+    <input type="submit" value="Добавить сериал" class="btn btn-success"><br>
+    <br><a href="/trailers/" class="btn btn-warning">Назад</a>
+</form>
+
+
+
+</body>
+</html>

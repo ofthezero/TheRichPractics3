@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trailers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+
+<div th:each="el:${trailers}">
+<br>
+<form th:action="'/trailers/edit/' + ${el.id}" method="post">
+    <input type="text"  class="btn btn-light" id="nameT" name="nameT" placeholder="Название сериала">
+    <input type="text"  class="btn btn-light" id="raiting1" name="raiting1" placeholder="Рейтинг КП">
+    <input type="text"  class="btn btn-light" id="raiting2" name="raiting2" placeholder="Рейтинг UHTB">
+    <input type="text"  class="btn btn-light" id="date" name="date" placeholder="Количество серий">
+    <input type="text"  class="btn btn-light" id="season" name="season" placeholder="Количество сезонов">
+
+    <input type="submit" value="Изменить данные" class="btn btn-success"><br>
+    <br><a href="/trailers/" class="btn btn-warning">Назад</a>
+</form>
+
+
+</div>
+</body>
+</html>

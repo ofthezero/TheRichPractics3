@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>News</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+
+<div th:each="el : ${news}"  class="btn btn-light" >
+  <h2 th:text="${el.title}"></h2>
+  <h3 th:text="${el.author}"></h3>
+  <p th:text="${el.body_text}"></p><br>
+  <p th:text="${el.views}"></p>
+  <p th:text="${el.likes}"></p>
+  <a th:href="'/news/edit/'+ ${el.id}" class="btn btn-dark">Изменить</a>
+  <a th:href="'/news/del/'+ ${el.id}" class="btn btn-danger">Удалить</a>
+  <a href="/news/" class="btn btn-warning">Назад</a>
+</div>
+
+</body>
+</html>

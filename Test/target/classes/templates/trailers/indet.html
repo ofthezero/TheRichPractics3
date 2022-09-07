@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trailers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+<br>
+<div th:each="el : ${trailers}" class="btn btn-light" >
+    <h2 th:text="${el.nameT}"></h2>
+    <h2 th:text="${el.raiting1}"></h2>
+
+
+    <h3 th:text="${el.season}"></h3>
+    <a th:href="'/trailers/' + ${el.id} " class="btn btn-warning">Подробнее</a>
+
+</div>
+<br>
+<form method="get" action="/trailers/seartrailers"><br>
+    <input type="text" name="nameT" id="nameT"  class="btn btn-dark"  placeholder="Поиск...">
+    <input type="submit" value="Найти" class="btn btn-outline-dark me-2">
+</form>
+<br>
+<a href="/trailers/adde" class="btn btn-warning">Добавить cериал</a>
+
+</body>
+</html>

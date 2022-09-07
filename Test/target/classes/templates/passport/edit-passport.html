@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Passport</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+<br>
+<div th:each="el:${passport}">
+
+    <form th:action="'/passport/edit/' + ${el.id}" method="post">
+    <input type="text"  class="btn btn-light" id="name" name="name" placeholder="Имя">
+    <input type="text"  class="btn btn-light" id="surname" name="surname" placeholder="Фамилия">
+    <input type="text"  class="btn btn-light" id="petronymic" name="petronymic" placeholder="Отчество">
+    <input type="text"  class="btn btn-light" id="snils_number" name="snils_number" placeholder="Номер Снилс">
+    <input type="text"  class="btn btn-light" id="oms_number" name="oms_number" placeholder="Номер ОМС">
+    <input type="submit" value="Изменить данные" class="btn btn-success"><br>
+      <br>  <a href="/passport/" class="btn btn-warning">Назад</a>
+    </form>
+
+</div>
+</body>
+</html>
